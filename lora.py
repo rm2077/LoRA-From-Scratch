@@ -2,8 +2,6 @@ import torch
 from torch import nn
 
 #Create A and B matrices
-#Retrieve attention weight matrices (we will apply LoRA on these)
-#Rank r will be given 
 #Matrix A size = (d, r)
 #Matrix B size = (r, k)
 
@@ -27,10 +25,6 @@ class LoRALayer(nn.Module):
 
         updated_weights = self.layer(x) + self.scaling_factor * (x @ self.lora_update)
         return updated_weights
-
-
-"""if __name__ == "__main__":
-    print(LoRALayer(nn.Linear(768, 768), rank=2, alpha=1).forward(torch.randn((1, 768))))"""
 
 
 
