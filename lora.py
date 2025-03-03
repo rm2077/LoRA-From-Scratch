@@ -1,9 +1,9 @@
 import torch
 from torch import nn
 
-#Create A and B matrices
-#Matrix A size = (d, r)
-#Matrix B size = (r, k)
+#Weight matrix with size (d, k)
+#Matrix A size = (r, k)
+#Matrix B size = (d, r)
 
 class LoRALayer(nn.Module):
     def __init__(self, layer: nn.Linear, rank, alpha):
